@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Access</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 100px;
+      background: linear-gradient(160deg, cyan, lightgreen);
+      padding: 20px;
+      width: 80%;
+      max-width: 400px;
+      margin: 100px auto;
+      border-radius: 10px;
+      animation-name: fr;
+      animation-duration: 2s;
+      animation-iteration-count:infinite;
+    }
+    @keyframes fr{
+      from{
+        border-color:gold;
+      }to{
+       border-color:green;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100px;
+      height: 40px;
+      color: yellow;
+      background: blue;
+      text-align: center;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input {
+      height: 30px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      width: calc(100% - 20px);
+      max-width: 300px;
+    }
+
+    input:valid {
+      color: green;
+      border-color: blue;
+    }
+
+    input:invalid {
+      border-color: red;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form id="accessForm">
+    <i>diablo_x!t ?</i>
+    <br>
+    <b>Enter your key 🔐</b>
+    <br>
+    <label for="key"><u>🔐 Key:</u></label>
+    
+    
+    <input type="password" id="key" placeholder="@key:..." required>
+    <br>
+    <button type="submit">S t A R T</button>
+  </form>
+
+  <script>
+    document.getElementById('accessForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const key = document.getElementById('key').value;
+      const correctKey = "123";
+      if (key === correctKey) {
+        alert("Access granted!");
+      
+         window.location.href = "/diablo.html";
+      } else {
+        alert("Access denied!");
+      }
+    });
+  </script>
+
+</body>
+
+</html>
